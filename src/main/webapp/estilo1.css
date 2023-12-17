@@ -1,0 +1,619 @@
+
+/*En este archivo .css trate de utilizar la mayor cantidad de las herramientas vistas 
+en clases. En algunas secciones utilice css puro en otras boostrap con pequeños retoques
+proios necesarios para adapatarlo a mi pagina. Utilice pseudoelementos, hover, position 
+y en algunas secciones utilice flex y en otros grid. Probe en mi navegador ver la pagina
+en diferentes dispositivos y se adapta bien. 
+Lo unico que estoy desconforme es con mi diseño, soy muy malo en dar estios copados, 
+pero si pude lograr hacer lo que pretendia y tenia en mi cabeza. Por suerte no se evalua 
+lo lindo de las paginas. Ojala llegue a el objetivo del trabajo final. Mucgas gracias proge
+Att. Sebastian Naya*/
+
+/* Codigo de color de boostrap Success:  #5cb85c */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,500,300,700);
+
+*{
+	padding: 0;
+	margin:0;
+	box-sizing: content-box;
+}
+
+main{
+	background-color: black;
+	display:block;
+}
+
+
+/*boton wasap*/
+.btn-wsp{
+	position:fixed;
+	width:60px;
+	height:60px;
+/*    line-height: 53px;*/
+	bottom:25px;
+	right:25px;
+	background:#25d366;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+	align-items: center;
+	font-size:37px;
+	box-shadow: 0px 1px 10px rgba(0,0,0,0.3);
+	z-index:100;
+	transition: all 300ms ease;
+}
+
+.btn-wsp:hover{
+	background: #20ba5a;
+}
+
+/*@media only screen and (min-width:320px) and (max-width:768px)*/
+@media only screen and (max-width:768px){
+	.btn-wsp{
+		width:63px;
+		height:63px;
+		line-height: 58px;
+
+	}
+	.icono{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+}
+
+/*---------------ESTILO MENU NAV SUPERIOR-----------------*/
+.nav-item>a:hover{
+	background-color: #52E366;
+}
+
+.nav-item li>a:hover{
+	background-color: #52E366;
+}
+
+#titulo{
+	font-size: 35px;
+	font-family: 'Croissant One', cursive;
+	font-family: 'Gochi Hand', cursive;
+	text-shadow: 2px 2px 8px green;
+	-webkit-text-stroke: 1px black;
+	color: white; 
+}
+
+
+@media screen and (max-width:768px){
+	#titulo{
+		font-size: 26px;
+	}
+	.iconoPizza{
+		width: 50px;
+		margin:2px;
+		paddin:2px;
+	}
+	
+	.btn_nav{
+		font-size: 15px;
+		margin:2px;
+		paddin:2px;
+	}
+}
+
+/*---------------ESTILOS PARA EL MAIN SUPERIOR----------------*/
+
+/*------------Imagen superior con textos y botones----------------*/
+.contenedor{
+	height: 60vh;
+	width: 100%;
+	position:relative;
+	background: linear-gradient(to right, rgb(0, 0, 0, .75), rgb(0, 0, 0, .75)),
+	url("images/local.jpg");
+/*    object-fit: cover;*/
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	border-top: 4px solid #9acd32;
+}
+
+.contenedor img{
+	opacity: 0.95;
+	filter: brightness(55%);
+	width: 100%;
+	height: 400px;
+}
+
+.cuerpo {
+	position:absolute;
+	top:35%;
+	left:40%;
+	color:white;
+	padding: 15px;
+	height: 250px;
+}
+
+.titulo{
+/*	font-family: 'Croissant One', cursive;*/
+	font-family: 'Gochi Hand', cursive;
+	font-size: 48px;
+}
+.cuerpo p{
+	text-align: right;
+	padding-right: 20px;
+}
+
+.caja1{
+	color:white;
+	padding: 15px;
+	text-align: right;
+}
+
+.boton{
+	background-color: transparent;
+	color:white;
+	font-weight: bold;
+	font-size: 16px;
+	border:2px solid white;
+	border-radius: 5px;
+	height: 50px;
+	padding: 5px;
+	margin:5px;	
+}
+
+.boton1{
+	background: #178B22;
+	color:white;
+	font-weight: bold;
+	font-size: 16px;
+	border-radius: 5px;
+	width: 150px;
+	height: 50px;
+	padding: 5px;
+	margin:5px;
+}
+
+.boton1:hover, .boton:hover{
+	background-color:#02FB3D;
+}
+
+
+/*--------------EFECTO BOTON-------------*/
+
+.boton1{
+	box-shadow: 5px 4px 20px #fff;
+	position:relative;
+	overflow: hidden;
+	/*align-items: center;
+	justify-self: center;*/
+	transition-property: box-shadow;
+	transition-duration: 1s;
+}
+
+.boton1::before {
+	content: '';
+	position:absolute;
+	left: -10px;
+	top:-50px;
+	height: 150px;
+	width: 150px;
+	background: conic-gradient(white 25deg, green 150deg);
+	animation: rota 1.5s linear infinite;	
+}
+
+.boton1:hover{
+	box-shadow: 7px 7px 70px white;
+}
+
+@keyframes rota {
+	from{transform: rotate(0deg);}
+	to{transform: rotate(-360deg);}
+}
+.boton1::after {
+	content: 'RESERVA AHORA';
+	background:#178B22;
+	position:absolute;
+	left:4px;
+	top:4px;
+	/*margin-left: 3px;
+	margin-top: 3px;*/
+	height: 36px;
+	width: 136px;
+	
+	display:flex;
+	align-items:center;
+	justify-content: center;
+}
+
+@media screen and (max-width:768px){
+	.boton1::after {
+		left:4px;
+		top:3px;
+		width: 140px;
+		height: 27px;
+
+		display:flex;
+		align-items:center;
+		justify-content: center;
+	}
+}
+
+.botonPedido{
+    color:#02FB3D;
+}
+
+/*-------------------------MAIN SUPERIOR RESPONSIVO ----------------------*/
+
+
+@media screen and (max-width:1030px){
+	contenedor{
+		width: 100%;
+		left:0;
+	}
+	.cuerpo {
+		top:30%;
+		left:50%;
+	}
+	.caja1{
+		padding: 0;
+		text-align: center;
+	}
+	.boton, .boton1{
+		padding: 2px;
+		margin:2px;
+	}
+	.contenedor img{
+		opacity: 0.95;
+		filter: brightness(55%);
+		width: 80%;
+	}
+}
+
+@media screen and (max-width:768px){
+	.contenedor{
+		background-color: black;
+		height: 30vh;
+	}
+	.contenedor img{
+		opacity: 0.95;
+		filter: brightness(55%);
+		width: 100vw;
+		position:relative;
+		top:0;
+		height: 100%;
+
+	}
+	.contenedor p{		
+		color:white;
+		font-size: 14px;
+		width: 95vw;
+		text-align: center;
+		padding:10;
+	}
+	.cuerpo {
+		left:0;
+		top:0;
+		height: 100%;
+		color:white;
+		padding: 5px;
+		text-align: center;
+	}
+
+	.boton, .boton1{
+		background:#1e8449;
+		color:white;
+		font-weight: bold;
+		font-size: 10px;
+		border: 1px solid black;
+		border-radius: 5px;
+		height: 35px;
+		padding: 5px;
+		margin:5px;
+	}
+
+	.boton:hover, .boton1:hover{
+		background-color: #52E366;
+	}
+}
+
+/**********************ESTILO PARA LAS TARJETAS SIN BOOSTRAP ********************/
+
+.contenedor-tarjeta{
+	background-color: #000;
+	border: 2px solid #000;
+	border-radius: 12px 12px 0 0;
+	text-align: center;
+	justify-self: unset;
+}
+.tarjeta {
+	background-color: #1e8449;
+	width: 100%;
+	height: 100%;
+	border: 4px double #52E366;
+	border-radius: 12px 12px 0 0;
+	display: inline-block;
+	margin: 25px 25px;
+	max-width: 340px;
+
+	transition: opacity 0.7s, transform 0.7s;
+}
+.tarjeta:hover{
+	background-color: #52E366;
+	box-shadow: 5px 5px 15px 0px rgba(82,227,102,22);
+	opacity: 0.7;
+	transform: scale(1.03);
+}
+.tarjeta img {
+	padding: 5px;
+	border-radius: 15px;
+	width: 250px;
+	height: 140px;
+}
+
+.boton-tarjeta{
+	display:block;
+	margin:10px auto;
+	padding: 10px;
+	border: 2px solid black;
+	border-radius: 5px;
+	background: #000;
+	color:#52E366;
+}
+.boton-tarjeta:hover{
+	
+}
+
+/*****************TARJETAS RESPONSIVAS********************/
+
+@media screen and (max-width:768px){
+
+	.tarjeta{
+		margin:5px;
+		padding: 5px;
+		width: 60%;
+		min-width: 300px;
+	}
+	.tarjeta img{
+		width: 50%;
+		height: 100px;
+	}
+}
+
+
+/*----------------------------ESTILO DE SECCION DE IMAGEN Y MAPS--------------------------------*/
+
+.caja{
+	width: 90%;
+	margin:5px auto;
+	height: 500px;
+	border: 2px solid green;
+	box-shadow: 5px 5px 20px #67E570;
+	display:grid;
+	grid-template-columns: 1fr 1fr;
+	overflow: hidden;
+	
+}
+
+.left img{
+	width: 100%;
+	height: 400px;
+	object-fit: contain;
+	margin:0;	
+}
+
+@media (max-width: 1200px){
+	.caja{
+		height: 800px;
+		display:grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: 400px 400px;
+	}
+}
+
+
+/*-------------------------------FOTER-------------------------------*/
+
+.footer-contenedor {
+	background: #1e8449;
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+	box-sizing: border-box;
+	width: 100%;
+	text-align: left;
+	font: bold 16px sans-serif;
+	padding: 55px 50px;
+}
+
+.footer-contenedor .footer-left,
+.footer-contenedor .footer-center,
+.footer-contenedor .footer-right{
+	display: inline-block;
+	vertical-align: top;
+}
+
+/* Footer Izquierdo */
+
+.footer-contenedor .footer-left{
+	width: 40%;
+}
+
+/* logo */
+
+.footer-contenedor h3{
+	color:  #ffffff;
+	font: normal 36px 'Open Sans', cursive;
+	margin: 0;
+}
+
+.footer-contenedor h3 span{
+	color:  #0BF905;
+}
+
+/* Links */
+
+.footer-contenedor .footer-links{
+	color:  #ffffff;
+	margin: 20px 0 12px;
+	padding: 0;
+}
+
+.footer-contenedor .footer-links a{
+	display:inline-block;
+	line-height: 1.8;
+	font-weight:400;
+	text-decoration: none;
+	color:  inherit;
+}
+
+.footer-contenedor .footer-company-name{
+	color:  #222;
+	font-size: 14px;
+	font-weight: normal;
+	margin: 0;
+}
+
+/* Footer Central */
+
+.footer-contenedor .footer-center{
+	width: 35%;
+}
+@media (max-width: 880px){
+
+	.footer-contenedor .footer-center{
+		width: 35%;
+
+	}
+	.footer-contenedor .footer-center div{
+		width: 40%;
+		margin: 0 auto;
+		text-align: center;
+	}
+}
+
+
+.footer-contenedor .footer-center i{
+	background-color:  #33383b;
+	color: #ffffff;
+	font-size: 25px;
+	width: 38px;
+	height: 38px;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 42px;
+	margin: 10px 15px;
+	vertical-align: middle;
+}
+
+.footer-contenedor .footer-center i.fa-envelope{
+	font-size: 17px;
+	line-height: 38px;
+}
+
+.footer-contenedor .footer-center p{
+	display: inline-block;
+	color: #ffffff;
+	font-weight:400;
+	vertical-align: middle;
+	margin:0;
+}
+
+.footer-contenedor .footer-center p span{
+	display:block;
+	font-weight: normal;
+	font-size:14px;
+	line-height:2;
+}
+
+.footer-contenedor .footer-center p a{
+	color:  lightseagreen;
+	text-decoration: none;;
+}
+
+.footer-contenedor .footer-links a:before {
+	content: "|";
+	font-weight:300;
+	font-size: 20px;
+	left: 0;
+	color: #fff;
+	display: inline-block;
+	padding-right: 5px;
+}
+
+.footer-contenedor .footer-links .link-1:before {
+	content: none;
+}
+
+/* Footer Right */
+
+.footer-contenedor .footer-right{
+	width: 20%;
+}
+
+.footer-contenedor .footer-company-about{
+	line-height: 20px;
+	color:  #92999f;
+	font-size: 13px;
+	font-weight: normal;
+	margin: 0;
+}
+
+.footer-contenedor .footer-company-about span{
+	display: block;
+	color:  #ffffff;
+	font-size: 14px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+.footer-contenedor .footer-icons{
+	margin-top: 25px;
+}
+
+.footer-contenedor .footer-icons a{
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+	cursor: pointer;
+	background-color:  #33383b;
+	border-radius: 2px;
+
+	font-size: 20px;
+	color: #ffffff;
+	text-align: center;
+	line-height: 35px;
+
+	margin-right: 3px;
+	margin-bottom: 5px;
+}
+
+/* If you don't want the footer to be responsive, remove these media queries */
+
+@media (max-width: 880px) {
+
+	.footer-contenedor{
+		font: bold 14px sans-serif;
+	}
+
+	.footer-contenedor .footer-left,
+	.footer-contenedor .footer-center,
+	.footer-contenedor .footer-right{
+		display: block;
+		width: 100%;
+		margin-bottom: 40px;
+		text-align: center;
+	}
+
+	.footer-contenedor .footer-center i{
+		margin-left: 0;
+	}
+
+}
+
+.carousel-item img{
+	max-height: 500px;
+	min-height: 100px;
+	width: 100%;
+	object-fit: cover;
+	object-position: bottom;
+}
+
+.carousel-item {
+	align-items: center;
+}
+
